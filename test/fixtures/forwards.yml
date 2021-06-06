@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  local_url: MyText
+  global_url: MyText
+  user: one
+  active: false
+
+two:
+  local_url: MyText
+  global_url: MyText
+  user: two
+  active: false
