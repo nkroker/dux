@@ -15,13 +15,13 @@ module Api
     end
 
     def auth_header
-      request.headers['Authorization']
+      request.headers['HTTP_AUTHORIZATION']
     end
 
     def decoded_token
       if auth_header
         begin
-          decoded_payload(auth_header.split(' ')[1])
+          decoded_payload(auth_header)
         rescue JWT::DecodeError
           nil
         end
@@ -40,7 +40,7 @@ module Api
     end
 
     def authenticate_user
-      render json: { message: 'Please log in' }, status: :unauthenticate_user unless logged_in?
+      render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
     end
   end
 end

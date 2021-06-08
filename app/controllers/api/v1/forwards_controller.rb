@@ -1,6 +1,6 @@
 module Api
   module V1
-    class ForwardController < Api::BaseController
+    class ForwardsController < Api::BaseController
       before_action :authenticate_user
 
       def add
