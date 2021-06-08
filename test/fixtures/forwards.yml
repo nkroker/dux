@@ -3,11 +3,11 @@
 one:
   local_url: MyText
   global_url: MyText
-  user: one
   active: false
+  user: one
 
 two:
   local_url: MyText
   global_url: MyText
-  user: two
   active: false
+  user: two

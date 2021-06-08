@@ -4,10 +4,10 @@ one:
   user: one
   forward: one
   body: MyText
-  head: 
+  head: MyText
 
 two:
   user: two
   forward: two
   body: MyText
-  head: 
+  head: MyText

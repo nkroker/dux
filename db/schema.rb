@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_07_032328) do
+ActiveRecord::Schema.define(version: 2021_06_08_040909) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
-  create_table "forward_hooks", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "forward_id", null: false
+  create_table "forward_hooks", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "user_id", null: false
+    t.uuid "forward_id", null: false
     t.text "body"
     t.text "head"
     t.datetime "created_at", precision: 6, null: false
@@ -26,17 +27,17 @@ ActiveRecord::Schema.define(version: 2021_06_07_032328) do
     t.index ["user_id"], name: "index_forward_hooks_on_user_id"
   end
 
-  create_table "forwards", force: :cascade do |t|
+  create_table "forwards", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.text "local_url"
     t.text "global_url"
-    t.bigint "user_id", null: false
-    t.boolean "active", default: false
+    t.boolean "active"
+    t.uuid "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_forwards_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "username"
     t.string "email"
     t.string "password_digest"
