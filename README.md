@@ -1,4 +1,5 @@
 
+
 # dux
 > A simple solution for managing webhooks for Dev-Env
 
@@ -35,9 +36,8 @@ it is also done by API as well simply make a post request
 >      }
 > }
 
-
-
-
+<br>
+<br>
  ### 2. **Adding Forwards**
 
 Forward consists of two things: 
