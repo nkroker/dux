@@ -1,24 +1,68 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# dux
+> A simple solution for managing webhooks for Dev-Env
 
-Things you may want to cover:
+## About 
+Currently `dux` is in development stage.
+At present it is an API which provides you global endpoints as `forwards`
 
-* Ruby version
+## Anatomy of Requests
 
-* System dependencies
+ ### 1. **Authentication**
 
-* Configuration
+For authentication here we have JWT built in for that you need to sign up
+it is also done by API as well simply make a post request
 
-* Database creation
+ - Endpoint: `/users`
+ - Params: `email`, `username`, `password`
+ - Sample: 
+  > ****`curl --location --request POST 'http://localhost:3000/login?email=funkeyUsername&username=sample@example.com&password=pass-word'`****
+ 
+ 
+  > Response
 
-* Database initialization
+> ```json
+> {
+>     "data": {
+>         "id": "44ad73d8-87b8-4e47-a3e4-46f72ac70052",
+>         "type": "user",
+>         "attributes": {
+>             "username": "sample2@example.com",
+>             "email": "funkeyUsername",
+>             "api_key": "eyJhbGciOiJIUzI1NiJ9.PRETTYLONG API KEY",
+>             "created_at": "2021-06-09T18:24:21.969Z"
+>          }
+>      }
+> }
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+ ### 2. **Adding Forwards**
+
+Forward consists of two things: 
+    - `global_url` this is the dux's own hosted url mixed with identifier on which you can send your webhooks.
+    - `local_url` this you can set by sending a post request at 
+        
+ - endpoint: `/forwards/add`
+ - params: url
+ - Sample: 
+  > ****`curl --location --request POST 'http://localhost:3000/forwards/add?url=https://google.com' \
+--header 'Authorization: eyJhbGciOiJIUzI1NiJ9.PRETTYLONG API KEY' \
+--header 'Cookie: __profilin=p%3Dt'`****
+ 
+ 
+  > Response
+> ```json
+>     {
+>       "data": {
+>         "id": "f94fa966-2ad3-47b3-bbb3-47576baf963f",
+>         "type": "forward",
+>         "attributes": {
+>           "global_url": "http://localhost:3000/forwards/5bc2ad83-b0df-41b4-b465-f0ead4110f48/direct",
+>           "active": true,
+>           "created_at": "2021-06-09T17:29:38.357Z"
+>           }
+>         }
+>       }
+
