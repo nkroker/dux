@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
     scope module: :v1 do
       resources :forwards, only: [] do
+        member do
+          post :direct
+          get  :direct
+        end
         collection do
           post :add
         end

@@ -7,7 +7,7 @@ module Api
       if @user.valid?
         token = encode_token({ user_id: @user.id })
         @user.update(api_key: token)
-        render json: { user: @user.serial_hash }
+        render json: @user.serial_hash
       else
         render json: { error: @user.errors.to_a }
       end
@@ -20,7 +20,7 @@ module Api
       if @user && @user.authenticate(user_params[:password])
         token = encode_token({ user_id: @user.id })
         @user.update(api_key: token)
-        render json: { user: @user.serial_hash }
+        render json: @user.serial_hash
       else
         render json: { error: @user.errors.to_a }
       end
