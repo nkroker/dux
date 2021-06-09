@@ -25,6 +25,16 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Use bycrypt for encrypting sensitive information
+gem 'bcrypt'
+# Use rack-cors for blocking overloading of api
+gem 'rack-cors'
+# Use jwt for token based auth in rails api
+gem 'jwt'
+
+# serializers are important
+gem 'jsonapi-serializer'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
