@@ -3,7 +3,7 @@
 # dux
 > A simple solution for managing webhooks for Dev-Env
 
-<hr>
+
 ## About
 Currently `dux` is in development stage.
 At present it is an API which provides you global endpoints as `forwards`
@@ -41,6 +41,7 @@ it is also done by API as well simply make a post request
 
 <br>
 <hr>
+
 ### 2. **Adding Forwards**
 
 Forward consists of two things:
@@ -72,6 +73,7 @@ Forward consists of two things:
 
 <br>
 <hr>
+
 ### 3. **To-Do:**
 * [ ] Add Test Cases
 * [ ] Implement Responsive Web Views
