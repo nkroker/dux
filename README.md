@@ -20,7 +20,7 @@ it is also done by API as well simply make a post request
  - Endpoint: `/users`
  - Params: `email`, `username`, `password`
  - Sample:
-  > **`curl --location --request POST 'http://localhost:3000/login?email=funkeyUsername&username=sample@example.com&password=pass-word'`**
+  > **`curl --location --request POST 'http://localhost:3000/users?email=funkeyUsername&username=sample@example.com&password=pass-word'`**
 
 
   > **Response**
@@ -31,8 +31,8 @@ it is also done by API as well simply make a post request
 >         "id": "44ad73d8-87b8-4e47-a3e4-46f72ac70052",
 >         "type": "user",
 >         "attributes": {
->             "username": "sample@example.com",
->             "email": "funkeyUsername",
+>             "email": "sample@example.com",
+>             "username": "funkeyUsername",
 >             "api_key": "eyJhbGciOiJIUzI1NiJ9.BIG FAT API KEY",
 >             "created_at": "2021-06-09T18:24:21.969Z"
 >          }
