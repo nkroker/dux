@@ -59,17 +59,17 @@ Forward consists of two things:
   > **Response**
 
 > ```json
->     {
->       "data": {
->         "id": "f94fa966-2ad3-47b3-bbb3-47576baf963f",
->         "type": "forward",
->         "attributes": {
->           "global_url": "http://localhost:3000/forwards/5bc2ad83-b0df-41b4-b465-f0ead4110f48/direct",
->           "active": true,
->           "created_at": "2021-06-09T17:29:38.357Z"
->           }
->         }
->       }
+>{
+>    "data":{
+>        "id":"f94fa966-2ad3-47b3-bbb3-47576baf963f",
+>        "type":"forward",
+>        "attributes":{
+>            "global_url":"http://localhost:3000/forwards/5bc2ad83-b0df-41b4-b465-f0ead4110f48/direct",
+>            "active":true,
+>            "created_at":"2021-06-09T17:29:38.357Z"
+>        }
+>    }
+>}
 
 <br>
 <hr>

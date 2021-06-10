@@ -4,8 +4,8 @@ class User < ApplicationRecord
   validates_uniqueness_of :username
   validates_uniqueness_of :email
 
-  has_many :forwards
-  has_many :forward_hooks
+  has_many :forwards, dependent: :destroy
+  has_many :forward_hooks, dependent: :destroy
 
   def serial_hash
     UserSerializer.new(self).serializable_hash
