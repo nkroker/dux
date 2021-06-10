@@ -83,4 +83,4 @@ Forward consists of two things:
 * [ ] Implement Logging for `forward_hooks`
 * [ ] Implement Scheduled webhook forwards to `local_url`
 
-[Original Docs](./docs/README.md)
+[Original Docs](./README.md)
