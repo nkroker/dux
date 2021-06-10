@@ -3,9 +3,12 @@
 # dux
 > A simple solution for managing webhooks for Dev-Env
 
-## About 
+<hr>
+## About
 Currently `dux` is in development stage.
 At present it is an API which provides you global endpoints as `forwards`
+<br>
+<hr>
 
 ## Anatomy of Requests
 
@@ -16,11 +19,11 @@ it is also done by API as well simply make a post request
 
  - Endpoint: `/users`
  - Params: `email`, `username`, `password`
- - Sample: 
-  > ****`curl --location --request POST 'http://localhost:3000/login?email=funkeyUsername&username=sample@example.com&password=pass-word'`****
- 
- 
-  > Response
+ - Sample:
+  > **`curl --location --request POST 'http://localhost:3000/login?email=funkeyUsername&username=sample@example.com&password=pass-word'`**
+
+
+  > **Response**
 
 > ```json
 > {
@@ -28,31 +31,32 @@ it is also done by API as well simply make a post request
 >         "id": "44ad73d8-87b8-4e47-a3e4-46f72ac70052",
 >         "type": "user",
 >         "attributes": {
->             "username": "sample2@example.com",
+>             "username": "sample@example.com",
 >             "email": "funkeyUsername",
->             "api_key": "eyJhbGciOiJIUzI1NiJ9.PRETTYLONG API KEY",
+>             "api_key": "eyJhbGciOiJIUzI1NiJ9.BIG FAT API KEY",
 >             "created_at": "2021-06-09T18:24:21.969Z"
 >          }
 >      }
 > }
 
 <br>
-<br>
- ### 2. **Adding Forwards**
+<hr>
+### 2. **Adding Forwards**
 
-Forward consists of two things: 
+Forward consists of two things:
     - `global_url` this is the dux's own hosted url mixed with identifier on which you can send your webhooks.
-    - `local_url` this you can set by sending a post request at 
-        
+    - `local_url` this you can set by sending a post request at
+
  - endpoint: `/forwards/add`
  - params: url
- - Sample: 
-  > ****`curl --location --request POST 'http://localhost:3000/forwards/add?url=https://google.com' \
+ - Sample:
+  > **`curl --location --request POST 'http://localhost:3000/forwards/add?url=https://google.com' \
 --header 'Authorization: eyJhbGciOiJIUzI1NiJ9.PRETTYLONG API KEY' \
---header 'Cookie: __profilin=p%3Dt'`****
- 
- 
-  > Response
+--header 'Cookie: __profilin=p%3Dt'`**
+
+
+  > **Response**
+
 > ```json
 >     {
 >       "data": {
@@ -66,3 +70,15 @@ Forward consists of two things:
 >         }
 >       }
 
+<br>
+<hr>
+### 3. **To-Do:**
+* [ ] Add Test Cases
+* [ ] Implement Responsive Web Views
+* [ ] Implement 2FA at View
+* [ ] Reduce Query timings
+* [ ] Implement Better Request Save
+* [ ] Implement Logging for `forward_hooks`
+* [ ] Implement Scheduled webhook forwards to `local_url`
+
+[Original Docs](./docs/README.md)
