@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     post '/login', to: 'users#login'
 
     scope module: :v1 do
-      resources :forwards, only: [] do
+      resources :forwards, only: [:index] do
         member do
           post :direct
           get  :direct

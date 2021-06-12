@@ -11,6 +11,10 @@ class User < ApplicationRecord
     UserSerializer.new(self).serializable_hash
   end
 
+  def forward_list
+    ForwardSerializer.new(forwards).hash_for_collection
+  end
+
   def active_forward
     forwards.where(active: true).order(created_at: :desc).first
   end
