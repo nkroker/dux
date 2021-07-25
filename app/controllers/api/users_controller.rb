@@ -1,6 +1,5 @@
 module Api
   class UsersController < Api::BaseController
-
     # REGISTER
     def create
       @user = User.create(user_params)

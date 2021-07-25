@@ -2,7 +2,7 @@ module Api
   module V1
     class ForwardsController < Api::BaseController
       before_action :authenticate_user, except: [:direct]
-      before_action :find_forward, only:[:direct]
+      before_action :find_forward, only: [:direct]
 
       def index
         render json: current_user.forward_list
@@ -10,8 +10,9 @@ module Api
 
       def add
         token = SecureRandom.uuid
-        forward = current_user.forwards.create(
-          global_url: "#{request.base_url+direct_forward_path(token)}",
+
+        forward = current_user.forwards.find_or_create_by(
+          global_url: request.base_url.dup.concat(direct_forward_path(token)),
           url_token: token,
           local_url: params[:url],
           active: true
@@ -33,7 +34,9 @@ module Api
       private
 
       def extract_headers
-        request.headers.to_h.first(27).to_h rescue ''
+        request.headers.to_h.first(27).to_h
+      rescue StandardError
+        ''
       end
 
       def find_forward
