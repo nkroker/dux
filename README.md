@@ -25,20 +25,20 @@ it is also done by API as well simply make a post request
 
   > **Response**
 
-> ```json
-> {
->     "data": {
->         "id": "44ad73d8-87b8-4e47-a3e4-46f72ac70052",
->         "type": "user",
->         "attributes": {
->             "email": "sample@example.com",
->             "username": "funkeyUsername",
->             "api_key": "eyJhbGciOiJIUzI1NiJ9.BIG FAT API KEY",
->             "created_at": "2021-06-09T18:24:21.969Z"
->          }
->      }
-> }
-
+```json
+{
+    "data": {
+        "id": "44ad73d8-87b8-4e47-a3e4-46f72ac70052",
+        "type": "user",
+        "attributes": {
+            "email": "sample@example.com",
+            "username": "funkeyUsername",
+            "api_key": "eyJhbGciOiJIUzI1NiJ9.BIG FAT API KEY",
+            "created_at": "2021-06-09T18:24:21.969Z"
+         }
+     }
+}
+```
 <br>
 <hr>
 
@@ -58,19 +58,19 @@ Forward consists of two things:
 
   > **Response**
 
-> ```json
->{
->    "data":{
->        "id":"f94fa966-2ad3-47b3-bbb3-47576baf963f",
->        "type":"forward",
->        "attributes":{
->            "global_url":"http://localhost:3000/forwards/5bc2ad83-b0df-41b4-b465-f0ead4110f48/direct",
->            "active":true,
->            "created_at":"2021-06-09T17:29:38.357Z"
->        }
->    }
->}
-
+```json
+{
+    "data":{
+        "id":"f94fa966-2ad3-47b3-bbb3-47576baf963f",
+        "type":"forward",
+        "attributes":{
+            "global_url":"http://localhost:3000/forwards/5bc2ad83-b0df-41b4-b465-f0ead4110f48/direct",
+            "active":true,
+            "created_at":"2021-06-09T17:29:38.357Z"
+        }
+    }
+}
+```
 <br>
 <hr>
 
