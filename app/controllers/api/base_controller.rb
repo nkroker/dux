@@ -39,7 +39,7 @@ module Api
     end
 
     def authenticate_user
-      render json: { message: 'Please api key in header as AUTHORIZATION' }, status: :unauthorized unless logged_in?
+      render json: { message: 'Please provide api key in header as AUTHORIZATION' }, status: :unauthorized unless logged_in?
     end
 
     def current_user

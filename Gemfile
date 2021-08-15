@@ -45,9 +45,23 @@ group :development, :test do
   gem 'pry-rails'
   gem 'solargraph'
   gem 'rubocop'
+  gem 'awesome_print'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  # There may be other lines in this block already. Simply append the following after:
+  %w[rspec-rails rspec-core rspec-expectations rspec-mocks rspec-support].each do |lib|
+    gem lib #, git: "https://github.com/rspec/#{lib}.git", branch: 'main' # Previously '4-0-dev' or '4-0-maintenance' branch
+  end
+
+  gem 'shoulda-matchers', require: false
+  gem 'database_cleaner'
+  gem 'rubocop-rspec'
+  gem 'rspec-retry'
+  gem 'simplecov', require: false
+  gem 'webmock'
+  gem 'faker'
 end
 
 group :development do

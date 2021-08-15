@@ -30,7 +30,7 @@ it is also done by API as well simply make a post request
   curl \
     --location \
     --request \
-    POST 'http://localhost:3000/users?email=funkeyUsername&username=sample@example.com&password=pass-word'
+    POST 'http://localhost:3000/users?username=funkeyUsername&email=sample@example.com&password=pass-word'
 ```
 
 
@@ -66,6 +66,25 @@ Forward consists of two things:
 ```
 
  - Sample:
+  > **`curl --location --request POST 'http://localhost:3000/forwards/add?url=https://google.com' \
+--header 'Authorization: eyJhbGciOiJIUzI1NiJ9.PRETTYLONG API KEY' \
+--header 'Cookie: __profilin=p%3Dt'`**
+
+
+  > **Response**
+
+> ```json
+>{
+>    "data":{
+>        "id":"f94fa966-2ad3-47b3-bbb3-47576baf963f",
+>        "type":"forward",
+>        "attributes":{
+>            "global_url":"http://localhost:3000/forwards/.../direct",
+>            "active":true,
+>            "created_at":"2021-06-09T17:29:38.357Z"
+>        }
+>    }
+>}
 
 ```curl
   curl \
@@ -96,7 +115,7 @@ Forward consists of two things:
 <hr>
 
 ### 3. **To-Do:**
-* [ ] Add Test Cases
+* [x] Add Test Cases **WIP** :man_technologist:
 * [ ] Implement Responsive Web Views
 * [ ] Implement 2FA at View
 * [ ] Reduce Query timings
