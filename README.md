@@ -20,24 +20,27 @@ it is also done by API as well simply make a post request
  - Endpoint: `/users`
  - Params: `email`, `username`, `password`
  - Sample:
-  > **`curl --location --request POST 'http://localhost:3000/users?email=funkeyUsername&username=sample@example.com&password=pass-word'`**
+
+```curl
+  curl --location --request POST 'http://localhost:3000/users?email=funkeyUsername&username=sample@example.com&password=pass-word'
+```
 
 
-  > **Response**
+#### **Response**
 
 ```json
-{
-    "data": {
-        "id": "44ad73d8-87b8-4e47-a3e4-46f72ac70052",
-        "type": "user",
-        "attributes": {
-            "email": "sample@example.com",
-            "username": "funkeyUsername",
-            "api_key": "eyJhbGciOiJIUzI1NiJ9.BIG FAT API KEY",
-            "created_at": "2021-06-09T18:24:21.969Z"
-         }
-     }
-}
+  {
+      "data": {
+          "id": "44ad73d8-87b8-4e47-a3e4-46f72ac70052",
+          "type": "user",
+          "attributes": {
+              "email": "sample@example.com",
+              "username": "funkeyUsername",
+              "api_key": "eyJhbGciOiJIUzI1NiJ9.BIG FAT API KEY",
+              "created_at": "2021-06-09T18:24:21.969Z"
+          }
+      }
+  }
 ```
 <br>
 <hr>
@@ -51,25 +54,28 @@ Forward consists of two things:
  - endpoint: `/forwards/add`
  - params: url
  - Sample:
-  > **`curl --location --request POST 'http://localhost:3000/forwards/add?url=https://google.com' \
---header 'Authorization: eyJhbGciOiJIUzI1NiJ9.PRETTYLONG API KEY' \
---header 'Cookie: __profilin=p%3Dt'`**
+
+```curl
+  curl --location --request POST 'http://localhost:3000/forwards/add?url=https://google.com' \
+  --header 'Authorization: eyJhbGciOiJIUzI1NiJ9.PRETTYLONG API KEY' \
+  --header 'Cookie: __profilin=p%3Dt'
+```
 
 
-  > **Response**
+#### **Response**
 
 ```json
-{
-    "data":{
-        "id":"f94fa966-2ad3-47b3-bbb3-47576baf963f",
-        "type":"forward",
-        "attributes":{
-            "global_url":"http://localhost:3000/forwards/5bc2ad83-b0df-41b4-b465-f0ead4110f48/direct",
-            "active":true,
-            "created_at":"2021-06-09T17:29:38.357Z"
-        }
-    }
-}
+  {
+      "data":{
+          "id":"f94fa966-2ad3-47b3-bbb3-47576baf963f",
+          "type":"forward",
+          "attributes":{
+              "global_url":"http://localhost:3000/forwards/5bc2ad83-b0df-41b4-b465-f0ead4110f48/direct",
+              "active":true,
+              "created_at":"2021-06-09T17:29:38.357Z"
+          }
+      }
+  }
 ```
 <br>
 <hr>
