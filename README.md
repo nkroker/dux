@@ -22,7 +22,10 @@ it is also done by API as well simply make a post request
  - Sample:
 
 ```curl
-  curl --location --request POST 'http://localhost:3000/users?email=funkeyUsername&username=sample@example.com&password=pass-word'
+  curl \
+    --location \
+    --request \
+    POST 'http://localhost:3000/users?email=funkeyUsername&username=sample@example.com&password=pass-word'
 ```
 
 
@@ -56,9 +59,12 @@ Forward consists of two things:
  - Sample:
 
 ```curl
-  curl --location --request POST 'http://localhost:3000/forwards/add?url=https://google.com' \
-  --header 'Authorization: eyJhbGciOiJIUzI1NiJ9.PRETTYLONG API KEY' \
-  --header 'Cookie: __profilin=p%3Dt'
+  curl \
+  --location \
+  --request \
+  POST 'http://localhost:3000/forwards/add?url=https://google.com' \
+    --header 'Authorization: eyJhbGciOiJIUzI1NiJ9.PRETTYLONG API KEY' \
+    --header 'Cookie: __profilin=p%3Dt'
 ```
 
 
