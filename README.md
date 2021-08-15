@@ -65,62 +65,43 @@ Forward consists of two things:
     └── `url`
 ```
 
- - Sample:
-  > **`curl --location --request POST 'http://localhost:3000/forwards/add?url=https://google.com' \
---header 'Authorization: eyJhbGciOiJIUzI1NiJ9.PRETTYLONG API KEY' \
---header 'Cookie: __profilin=p%3Dt'`**
+  - Sample:
+
+  ```curl
+    curl \
+    --location \
+    --request \
+    POST 'http://localhost:3000/forwards/add?url=https://google.com' \
+      --header 'Authorization: eyJhbGciOiJIUzI1NiJ9.PRETTYLONG API KEY' \
+      --header 'Cookie: __profilin=p%3Dt'
+  ```
 
 
-  > **Response**
+  #### **Response**
 
-> ```json
->{
->    "data":{
->        "id":"f94fa966-2ad3-47b3-bbb3-47576baf963f",
->        "type":"forward",
->        "attributes":{
->            "global_url":"http://localhost:3000/forwards/.../direct",
->            "active":true,
->            "created_at":"2021-06-09T17:29:38.357Z"
->        }
->    }
->}
-
-```curl
-  curl \
-  --location \
-  --request \
-  POST 'http://localhost:3000/forwards/add?url=https://google.com' \
-    --header 'Authorization: eyJhbGciOiJIUzI1NiJ9.PRETTYLONG API KEY' \
-    --header 'Cookie: __profilin=p%3Dt'
-```
-
-
-#### **Response**
-
-```json
-  {
-      "data":{
-          "id":"f94fa966-2ad3-47b3-bbb3-47576baf963f",
-          "type":"forward",
-          "attributes":{
-              "global_url":"http://localhost:3000/forwards/5bc2ad83-b0df-41b4-b465-f0ead4110f48/direct",
-              "active":true,
-              "created_at":"2021-06-09T17:29:38.357Z"
-          }
-      }
-  }
-```
+  ```json
+    {
+        "data":{
+            "id":"f94fa966-2ad3-47b3-bbb3-47576baf963f",
+            "type":"forward",
+            "attributes":{
+                "global_url":"http://localhost:3000/forwards/5bc2ad83-b0df-41b4-b465-f0ead4110f48/direct",
+                "active":true,
+                "created_at":"2021-06-09T17:29:38.357Z"
+            }
+        }
+    }
+  ```
 <br>
 <hr>
 
 ### 3. **To-Do:**
-* [x] Add Test Cases **WIP** :man_technologist:
-* [ ] Implement Responsive Web Views
-* [ ] Implement 2FA at View
-* [ ] Reduce Query timings
-* [ ] Implement Better Request Save
-* [ ] Implement Logging for `forward_hooks`
-* [ ] Implement Scheduled webhook forwards to `local_url`
+  * [x] Add Test Cases **WIP** :man_technologist:
+  * [ ] Implement Responsive Web Views
+  * [ ] Implement 2FA at View
+  * [ ] Reduce Query timings
+  * [ ] Implement Better Request Save
+  * [ ] Implement Logging for `forward_hooks`
+  * [ ] Implement Scheduled webhook forwards to `local_url`
 
 [Original Docs](./README.md)
