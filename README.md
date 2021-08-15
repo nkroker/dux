@@ -18,7 +18,12 @@ For authentication here we have JWT built in for that you need to sign up
 it is also done by API as well simply make a post request
 
  - Endpoint: `/users`
- - Params: `email`, `username`, `password`
+```tree
+ Params
+    ├── `email`
+    ├── `username`
+    └── `password`
+```
  - Sample:
 
 ```curl
@@ -55,7 +60,11 @@ Forward consists of two things:
     - `local_url` this you can set by sending a post request at
 
  - endpoint: `/forwards/add`
- - params: url
+```tree
+ Params
+    └── `url`
+```
+
  - Sample:
 
 ```curl
