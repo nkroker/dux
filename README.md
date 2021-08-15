@@ -30,7 +30,7 @@ it is also done by API as well simply make a post request
   curl \
     --location \
     --request \
-    POST 'http://localhost:3000/users?email=funkeyUsername&username=sample@example.com&password=pass-word'
+    POST 'http://localhost:3000/users?username=funkeyUsername&email=sample@example.com&password=pass-word'
 ```
 
 
