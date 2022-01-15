@@ -1,12 +1,18 @@
-FROM bitnami/rails:6.1.3-0-debian-10-r6
+FROM ruby:2.7.0
 
-RUN mkdir /app
-
+# We specify everything will happen within the /app folder inside the container
 WORKDIR /app
+# We copy these files from our current application to the /app container
+COPY Gemfile Gemfile.lock ./
+
+# We install all the dependencies
+RUN bundle install
 
 COPY ./ /app
 
 RUN gem install bundler:2.1.2
+
+RUN bundle exec rake db:migrate
 
 EXPOSE 3000
 
